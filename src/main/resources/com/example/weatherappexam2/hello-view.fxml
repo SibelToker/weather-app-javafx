@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.weatherappexam2.HelloController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Weather App Exam 2" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Days:"/>
+        <TextField fx:id="daysField" text="1" prefWidth="50"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <RadioButton fx:id="radioLatLon" text="Lat/Lon" selected="true"/>
+        <RadioButton fx:id="radioName" text="City Name"/>
+    </HBox>
+
+    <HBox fx:id="boxLatLon" spacing="10" alignment="CENTER">
+        <VBox><Label text="Lat:"/><TextField fx:id="latField" promptText="52.52"/></VBox>
+        <VBox><Label text="Lon:"/><TextField fx:id="lonField" promptText="13.41"/></VBox>
+    </HBox>
+
+    <HBox fx:id="boxName" spacing="10" alignment="CENTER">
+        <Label text="City:"/><TextField fx:id="cityField" promptText="Poznan" disable="true"/>
+    </HBox>
+
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label text="Select Variables:"/>
+        <CheckBox fx:id="checkTemp" text="Temperature (2m)"/>
+        <CheckBox fx:id="checkRain" text="Precipitation (Rain)"/>
+        <CheckBox fx:id="checkWind" text="Wind Speed (10m)"/>
+        <CheckBox fx:id="checkPressure" text="Surface Pressure"/>
+    </VBox>
+
+    <Button text="FETCH DATA" onAction="#onFetchClick" style="-fx-font-weight: bold;"/>
+
+    <Label fx:id="infoLabel" text="..." wrapText="true" style="-fx-text-fill: blue; -fx-font-size: 11px;"/>
+</VBox>
